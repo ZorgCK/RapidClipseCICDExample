@@ -1,0 +1,51 @@
+**************AWS ECS Buchen****************
+
+**************Installieren Docker - https://docs.docker.com/engine/install/ubuntu/ **************
+
+sudo apt-get update
+
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+	
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+   
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+************** Installieren Portainer - https://www.portainer.io/installation/ **************
+
+docker volume create portainer_data
+docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
+
+Anmelden Portainer mit IP
+Passwort vergeben
+Portainer bisschen erklären
+
+************** Installieren Jenkins - https://www.jenkins.io/doc/book/installing/docker/ **************
+
+docker volume create jenkins-data
+
+docker container run -u root --name jenkins-blueocean --detach \
+  --volume jenkins-data:/var/jenkins_home \
+  --volume /var/run/docker.sock:/var/run/docker.sock \
+  --publish 8080:8080 --publish 50000:50000 jenkinsci/blueocean
+  
+************** Pipelinejob erstellen in Jenkins **************
+
+Pipeline anlegen
+Repo andocken (Clone URL)
+Credencials hinterlegen
+
+************** Wichtige Änderungen in den Files **************
+
+Applikation name eintragen in "Dockerfile" und "Jenkinsfile"
+DynIP eintragen in Contextfile
+
