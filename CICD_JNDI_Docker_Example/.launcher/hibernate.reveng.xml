@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering SYSTEM "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+    <type-mapping>
+        <sql-type jdbc-type="INTEGER" not-null="true" hibernate-type="int" />
+        <sql-type jdbc-type="INTEGER" hibernate-type="java.lang.Integer" />
+        <sql-type jdbc-type="TINYINT" precision="1" not-null="true" hibernate-type="boolean" />
+        <sql-type jdbc-type="TINYINT" precision="1" hibernate-type="java.lang.Boolean" />
+        <sql-type jdbc-type="TINYINT" not-null="true" hibernate-type="short" />
+        <sql-type jdbc-type="TINYINT" hibernate-type="java.lang.Short" />
+    </type-mapping>
+    <table-filter match-catalog="sakila" match-name="film_text" />
+    <table-filter match-catalog="sakila" match-name="category" />
+    <table-filter match-catalog="sakila" match-name="address" />
+    <table-filter match-catalog="sakila" match-name="film_actor" />
+    <table-filter match-catalog="sakila" match-name="customer" />
+    <table-filter match-catalog="sakila" match-name="film" />
+    <table-filter match-catalog="sakila" match-name="staff" />
+    <table-filter match-catalog="sakila" match-name="store" />
+    <table-filter match-catalog="sakila" match-name="city" />
+    <table-filter match-catalog="sakila" match-name="payment" />
+    <table-filter match-catalog="sakila" match-name="language" />
+    <table-filter match-catalog="sakila" match-name="rental" />
+    <table-filter match-catalog="sakila" match-name="actor" />
+    <table-filter match-catalog="sakila" match-name="country" />
+    <table-filter match-catalog="sakila" match-name="film_category" />
+    <table-filter match-catalog="sakila" match-name="inventory" />
+    <table catalog="sakila" name="film_text" class="com.company.cicd_jndi_docker_example.domain.FilmText" />
+    <table catalog="sakila" name="category" class="com.company.cicd_jndi_docker_example.domain.Category" />
+    <table catalog="sakila" name="address" class="com.company.cicd_jndi_docker_example.domain.Address" />
+    <table catalog="sakila" name="film_actor" class="com.company.cicd_jndi_docker_example.domain.FilmActor" />
+    <table catalog="sakila" name="customer" class="com.company.cicd_jndi_docker_example.domain.Customer" />
+    <table catalog="sakila" name="film" class="com.company.cicd_jndi_docker_example.domain.Film" />
+    <table catalog="sakila" name="staff" class="com.company.cicd_jndi_docker_example.domain.Staff" />
+    <table catalog="sakila" name="store" class="com.company.cicd_jndi_docker_example.domain.Store" />
+    <table catalog="sakila" name="city" class="com.company.cicd_jndi_docker_example.domain.City" />
+    <table catalog="sakila" name="payment" class="com.company.cicd_jndi_docker_example.domain.Payment" />
+    <table catalog="sakila" name="language" class="com.company.cicd_jndi_docker_example.domain.Language" />
+    <table catalog="sakila" name="rental" class="com.company.cicd_jndi_docker_example.domain.Rental" />
+    <table catalog="sakila" name="actor" class="com.company.cicd_jndi_docker_example.domain.Actor" />
+    <table catalog="sakila" name="country" class="com.company.cicd_jndi_docker_example.domain.Country" />
+    <table catalog="sakila" name="film_category" class="com.company.cicd_jndi_docker_example.domain.FilmCategory" />
+    <table catalog="sakila" name="inventory" class="com.company.cicd_jndi_docker_example.domain.Inventory" />
+</hibernate-reverse-engineering>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="CICD_JNDI_Docker_Example"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<non-jta-data-source>java:comp/env/jdbc/MyDataSource</non-jta-data-source>
+
+		<class>com.company.cicd_jndi_docker_example.domain.Customer</class>
+		<class>com.company.cicd_jndi_docker_example.domain.FilmActorId</class>
+		<class>com.company.cicd_jndi_docker_example.domain.Category</class>
+		<class>com.company.cicd_jndi_docker_example.domain.FilmCategoryId</class>
+		<class>com.company.cicd_jndi_docker_example.domain.Language</class>
+		<class>com.company.cicd_jndi_docker_example.domain.Country</class>
+		<class>com.company.cicd_jndi_docker_example.domain.Address</class>
+		<class>com.company.cicd_jndi_docker_example.domain.Rental</class>
+		<class>com.company.cicd_jndi_docker_example.domain.FilmText</class>
+		<class>com.company.cicd_jndi_docker_example.domain.Store</class>
+		<class>com.company.cicd_jndi_docker_example.domain.FilmCategory</class>
+		<class>com.company.cicd_jndi_docker_example.domain.Inventory</class>
+		<class>com.company.cicd_jndi_docker_example.domain.FilmActor</class>
+		<class>com.company.cicd_jndi_docker_example.domain.Staff</class>
+		<class>com.company.cicd_jndi_docker_example.domain.City</class>
+		<class>com.company.cicd_jndi_docker_example.domain.Actor</class>
+		<class>com.company.cicd_jndi_docker_example.domain.Film</class>
+		<class>com.company.cicd_jndi_docker_example.domain.Payment</class>
+
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<property name="hibernate.hbm2ddl.auto" value="none" />
+			<property name="javax.persistence.sharedCache.mode" value="ENABLE_SELECTIVE" />
+			<property name="hibernate.c3p0.max_size" value="100" />
+			<property name="hibernate.c3p0.idle_test_period" value="300" />
+			<property name="hibernate.c3p0.max_statements" value="50" />
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.MySQL57InnoDBDialect" />
+			<property name="hibernate.cache.use_query_cache" value="true" />
+			<property name="hibernate.c3p0.min_size" value="1" />
+			<property name="rap.queryCache.mode" value="ENABLE_SELECTIVE" />
+			<property name="hibernate.archive.autodetection" value="" />
+			<property name="hibernate.cache.use_second_level_cache" value="true" />
+			<property name="hibernate.c3p0.timeout" value="3000" />
+			<property name="hibernate.transaction.auto_close_session" value="false" />
+			<property name="hibernate.javax.cache.uri" value="classpath:ehcache.xml" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.cache.region.factory_class"
+				value="org.hibernate.cache.jcache.JCacheRegionFactory" />
+			<property name="hibernate.generate_statistics" value="false" />
+			<property name="hibernate.auto_quote_keyword" value="true" />
+		</properties>
+	</persistence-unit>
+</persistence>

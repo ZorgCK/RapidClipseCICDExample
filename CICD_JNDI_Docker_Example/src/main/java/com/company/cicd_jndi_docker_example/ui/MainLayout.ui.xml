@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<?xdevuiml version="1.0"?>
+<?template NONE?>
+<?import com.company.cicd_jndi_docker_example.domain.Customer?>
+<?import com.vaadin.flow.component.grid.Grid?>
+<?import com.vaadin.flow.component.orderedlayout.VerticalLayout?>
+<VerticalLayout xmlns:x="http://xml.xdev-software.com/xdevuiml" x:name="MainLayout" x:route="">
+    <x:constraints zpos="0" width="100%" height="100%" />
+    <Grid x:name="grid">
+        <x:typeArguments>
+            <typeArgument type="Customer" />
+        </x:typeArguments>
+        <x:constraints width="100%" height="100%" flex-grow="1.0" />
+        <x:dataProvider dataFetchMethod="findAll" />
+        <x:columns>
+            <column property="customerId" sortable="true" autoWidth="true" flexGrow="0" />
+            <column property="lastName" sortable="true" />
+            <column property="firstName" sortable="true" />
+            <column property="email" sortable="true" />
+            <column property="createDate" sortable="true">
+                <renderer type="DateRenderer" nullRepresentation="">
+                    <dateFormat dateStyle="DEFAULT" timeStyle="DEFAULT" format="DateTime" timeZone="default" locale="default" />
+                </renderer>
+            </column>
+            <column property="active" sortable="true" flexGrow="0" />
+        </x:columns>
+    </Grid>
+</VerticalLayout>
